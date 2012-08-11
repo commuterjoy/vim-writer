@@ -1,0 +1,52 @@
+
+" dictionary lookup
+:set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+:set complete-=k complete+=k
+
+" spelling
+:set spell spelllang=en_gb
+
+" fix arrow keys
+:set nocompatible
+
+" Indents
+filetype plugin indent on
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" New text wraps at 72 characters - Eg, vipgq
+set tw=72
+
+" Make backspace work like most other apps
+set backspace=2
+
+" Highlight search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Always show the status line
+set laststatus=2
+
+" no backups! 
+set nobackup
+set noswapfile
+
+" no beep
+set visualbell
+set noerrorbells
+
+" don't pollute the global info file
+:set viminfo=
+
+" always start IDE in same folder
+:cd ~/Notes
+
+" default filetype
+let g:do_filetype = 0
+au GUIEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
+au BufEnter * if g:do_filetype | setf mkd | let g:do_filetype = 0 | endif
+
