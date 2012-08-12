@@ -31,6 +31,10 @@
 	<real>2.02</real>
 	<key>RunCommandAsShell</key>
 	<false/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowWindowSettingsNameInTitle</key>
+	<false/>
 	<key>TextBoldColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -49,6 +53,8 @@
 	0RcYVHJvb3SAAQgRGiMtMjc7QUhPXGJkZo2SnaausbrMz9QAAAAAAAABAQAAAAAAAAAZ
 	AAAAAAAAAAAAAAAAAAAA1g==
 	</data>
+	<key>WindowTitle</key>
+	<string>Vim Text Edit</string>
 	<key>name</key>
 	<string>Text Edit</string>
 	<key>noWarnProcesses</key>

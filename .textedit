@@ -1,12 +1,25 @@
 
-" dictionary lookup
+" Disable intro message (sorry Ugandan children)
+:set shortmess+=I
+
+" Dictionary lookup
 :set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 :set complete-=k complete+=k
 
-" spelling
-:set spell spelllang=en_gb
+" Spellcheck
+:set spell
+:set spelllang=en_gb
 
-" fix arrow keys
+" Underline badly spelt words
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+" Don't highlight non-capitalized, rare, and non-local  words
+hi clear SpellCap
+hi clear SpellRare
+hi clear SpellLocal
+
+" Fix arrow keys
 :set nocompatible
 
 " Indents
@@ -31,22 +44,20 @@ set smartcase
 " Always show the status line
 set laststatus=2
 
-" no backups! 
+" No backups! 
 set nobackup
 set noswapfile
 
-" no beep
+" No beep
 set visualbell
 set noerrorbells
 
-" don't pollute the global info file
+" Don't pollute the global info file
 :set viminfo=
 
-" always start IDE in same folder
+" Always start IDE in same folder
 :cd ~/Notes
 
-" default filetype
-let g:do_filetype = 0
-au GUIEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
-au BufEnter * if g:do_filetype | setf mkd | let g:do_filetype = 0 | endif
+" Wordnet lookup for word under the cursor - requires: https://github.com/timcharper/wordnet.vim 
+noremap <buffer> <Leader>w :Wordnet <C-r><C-w><CR>
 
